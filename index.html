@@ -365,7 +365,8 @@
                     
                     <div className="relative z-10 flex flex-col items-center justify-center h-full">
                       <Activity className="text-purple-200 w-32 h-32 mb-6" />
-                      <h1 className="text-[1.35rem] sm:text-3xl md:text-5xl font-black leading-[1.6] md:leading-[1.4] tracking-tight mb-6 text-slate-800">
+                      {/* --- スマホで文字サイズが大きすぎたため、text-xl に調整 --- */}
+                      <h1 className="text-xl sm:text-3xl md:text-5xl font-black leading-[1.6] md:leading-[1.4] tracking-tight mb-6 text-slate-800">
                         <span className="block whitespace-nowrap">あなたの<span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-500">『意志』</span>ではなく</span>
                         <span className="block whitespace-nowrap"><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-400">『性格』</span>で選ぶ、</span>
                         <span className="block whitespace-nowrap">新しいフィットネス。</span>
@@ -445,7 +446,6 @@
                     <div className="absolute top-0 right-0 w-32 h-32 bg-orange-100 rounded-bl-full opacity-50"></div>
                     
                     <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6 relative z-10 mb-8 border-b border-slate-100 pb-8">
-                      {/* --- キャラクター画像の枠サイズと表示方法を修正 --- */}
                       <div className="w-24 h-24 md:w-28 md:h-28 shrink-0 rounded-full bg-purple-50 border-[3px] border-white shadow-lg shadow-purple-900/10 overflow-hidden flex items-center justify-center relative">
                         <img 
                           src={currentTypeInfo.imageUrl} 
@@ -456,7 +456,8 @@
                       
                       <div className="text-center md:text-left flex-1">
                         <p className="text-orange-500 font-bold tracking-widest uppercase text-xs md:text-sm mb-2">Analysis Result</p>
-                        <h2 className="text-4xl md:text-5xl font-black mb-3 text-slate-800">
+                        {/* --- スマホで改行されないよう文字サイズ調整と whitespace-nowrap を追加 --- */}
+                        <h2 className="text-[1.35rem] sm:text-2xl md:text-4xl font-black mb-3 text-slate-800 whitespace-nowrap">
                           あなたは <span className="text-transparent bg-clip-text bg-gradient-to-r from-purple-700 to-purple-500">{currentTypeInfo.name}</span> タイプ
                         </h2>
                         <p className="text-lg md:text-xl text-slate-600 font-bold">〜 {currentTypeInfo.subtitle} 〜</p>
@@ -470,7 +471,6 @@
                     )}
 
                     <div className="w-full bg-slate-50/50 rounded-3xl p-4 md:p-6 shadow-inner border border-slate-100">
-                      {/* --- BIGFIVEグラフ全体をコンパクトに修正 --- */}
                       <div className="space-y-5 md:space-y-6">
                         {traitsData.map((trait, index) => (
                           <div key={index} className="flex flex-col">
